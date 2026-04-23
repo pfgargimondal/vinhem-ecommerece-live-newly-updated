@@ -790,6 +790,20 @@ p.sidifsdiyhr{
   color: #fff;
   transition: 0.2s ease-in-out;
 }
+
+.saoijhdekjwirwer .dowekrwerwer input[type=checkbox]:checked + label {
+  border: 1px solid var(--pink-main-color);
+  background: var(--pink-main-color);
+  color: #fff;
+  transition: 0.2s ease-in-out;
+  box-shadow: rgba(132, 13, 86, 0.12) 0px 2px 4px 0px, rgba(132, 13, 86, 0.32) 0px 2px 16px 0px;
+}
+.saoijhdekjwirwer .dowekrwerwer input[type=checkbox]:checked + label span{
+  color: #fff;
+  transition: 0.2s ease-in-out;
+}
+
+
 .fhdfgh p i{
   color: var(--pink-main-color);
   font-size: 1.2rem;

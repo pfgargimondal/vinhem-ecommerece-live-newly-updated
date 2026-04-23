@@ -755,8 +755,14 @@ export const ProductDetail = () => {
   // ------------------------------
   // Handle stitch option
   // ------------------------------
+  // const handleStitchOptionChange = (type) => {
+  //   setSelectedStitchOption(type);
+  // };
+
   const handleStitchOptionChange = (type) => {
-    setSelectedStitchOption(type);
+    setSelectedStitchOption((prev) =>
+      prev === type ? "" : type
+    );
   };
 
   useEffect(() => {
@@ -1892,7 +1898,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                     <div className="saoijhdekjwirwer">
                                       <div className="dowekrwerwer">
                                         <input
-                                          type="radio"
+                                          type="checkbox"
                                           name="so"
                                           id="cf"
                                           className="d-none position-absolute"
