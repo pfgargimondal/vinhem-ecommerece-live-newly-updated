@@ -18,9 +18,9 @@ export const FeaturedProducts = ({ featuredProduct }) => {
 
     const toggleWishlist = () => {
         if (isWishlisted) {
-        removeFromWishlist(featuredProduct.id);
+        removeFromWishlist(featuredProduct.PID);
         } else {
-        addToWishlist(featuredProduct.id);
+        addToWishlist(featuredProduct.PID);
         }
     };
 
@@ -66,11 +66,11 @@ export const FeaturedProducts = ({ featuredProduct }) => {
                           <i class="fa-solid fa-cart-arrow-down"></i>
                         </button>
                         <button
-                          onClick={() => toggleWishlist(featuredProduct.id)}
+                          onClick={() => toggleWishlist(featuredProduct.PID)}
                         >
                           <i
                             className={
-                              wishlistIds.includes(featuredProduct.id)
+                              wishlistIds.includes(featuredProduct.PID)
                                 ? "fa-solid fa-heart"
                                 : "fa-regular fa-heart"
                             }
@@ -145,12 +145,12 @@ export const FeaturedProducts = ({ featuredProduct }) => {
                           </button>
                           <button
                             onClick={() =>
-                              toggleWishlist(featuredProduct.id)
+                              toggleWishlist(featuredProduct.PID)
                             }
                           >
                             <i
                               className={
-                                wishlistIds.includes(featuredProduct.id)
+                                wishlistIds.includes(featuredProduct.PID)
                                   ? "fa-solid fa-heart"
                                   : "fa-regular fa-heart"
                               }
