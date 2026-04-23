@@ -11,8 +11,6 @@
 
 
 
-
-
 @media only screen and (max-width: 3000px){
   .dfbhhfgdf,
   .dfgdfg255,
@@ -159,14 +157,14 @@
   .dfbghf1 h4,
   .dfbghf2 h4,
   .dfbghf3 h4{
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .dfbghf button,
   .dfbghf1 button,
   .dfbghf2 button,
   .dfbghf3 button{
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
@@ -179,4 +177,24 @@
     .fgjhdfgf{
         grid-template-columns: 100%;
     }
+}
+
+
+
+
+
+@media only screen and (max-width: 393px){
+  .dfbghf h4,
+  .dfbghf1 h4,
+  .dfbghf2 h4,
+  .dfbghf3 h4{
+    font-size: 14px;
+  }
+
+  .dfbghf button,
+  .dfbghf1 button,
+  .dfbghf2 button,
+  .dfbghf3 button{
+    font-size: 12px;
+  }
 }

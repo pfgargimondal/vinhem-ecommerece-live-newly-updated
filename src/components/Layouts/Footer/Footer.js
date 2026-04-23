@@ -304,7 +304,7 @@ export const Footer = ({ shouldHideFullHeaderFooterRoutes }) => {
     <>
       {loading && <Loader />}
       {!shouldHideFullHeaderFooterRoutes && (
-        <footer style={{ paddingBottom: mainCatgry?.some(item => pathName.startsWith(`/${item.mainCategory_slug}`) || pathName.startsWith(`/all-products`)) ? "4.5rem" : "" }}>
+        <footer style={{ paddingBottom: mainCatgry?.some(item => pathName.startsWith(`/${item.mainCategory_slug}`) || pathName.startsWith(`/all-products`)) ? "10rem" : "" }}>
           <div className="container-fluid pt-5">
             <div className="row">
               <div className="col-lg-9">
@@ -470,7 +470,7 @@ export const Footer = ({ shouldHideFullHeaderFooterRoutes }) => {
               <p className="doejwojrowejower" style={{ textAlign: "center" }}>Secure shopping from India for Sarees, Salwar Kameez, Lehenga Cholis, Mens Wear, Kids Wears, Jewellery & Accessories for delivery in USA,UK and Worldwide.</p>
             </div>
 
-            <div className="duiwehihiwejiurwer py-3">
+            <div className="duiwehihiwejiurwer py-3" style={{  }}>
               <div className="container-fluid">
                 <div className="row align-items-center">
                   <div className="col-lg-5">

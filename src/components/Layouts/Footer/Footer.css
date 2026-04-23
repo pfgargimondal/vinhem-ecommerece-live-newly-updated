@@ -2,6 +2,7 @@ footer {
   border-top: 1px solid var(--pink-main-color);
   position: relative;
   z-index: 9999;
+  padding-bottom: 5rem;
 }
 
 .dgsdfhdrgh{
