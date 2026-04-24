@@ -32,6 +32,7 @@ export const Filter = () => {
   const [allFilterData, SetallFilterData] = useState(null);
   const [allFilterMappingdata, SetallFilterMappingdata] = useState([]);
   const [filterCategories, setFilterCategories] = useState([]);
+  const [productMinPrice, setProductMinPrice] = useState(0);
 
   const { loading: wishlistLoading, wishlistIds, addToWishlist, removeFromWishlist } = useWishlist();
   const [loading, setLoading] = useState(true);
@@ -509,6 +510,7 @@ export const Filter = () => {
 
         setFilterCategories(response.data?.categoryData ?? []);
         SetallFilterMappingdata(response.data?.data ?? []);
+        setProductMinPrice(response.data.productMinPrice ?? 0);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
@@ -748,7 +750,7 @@ export const Filter = () => {
                   }`}
                 id="res-filtr-nav"
               >
-                <FilterSection category={category} subcategory={subcategory} filterCategory={filterCategory} setResFltrMenu={setResFltrMenu} allFilterMappingdata={allFilterMappingdata} filterCategories={filterCategories} />
+                <FilterSection category={category} subcategory={subcategory} filterCategory={filterCategory} setResFltrMenu={setResFltrMenu} allFilterMappingdata={allFilterMappingdata} filterCategories={filterCategories} productMinPrice={productMinPrice} />
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ import Loader from "../../components/Loader/Loader";
 import { useCurrency } from "../../context/CurrencyContext";
 
 
-export default function FilterSection({ setResFltrMenu, allFilterMappingdata, filterCategories, category, subcategory }) {
+export default function FilterSection({ setResFltrMenu, allFilterMappingdata, filterCategories, category, subcategory, productMinPrice }) {
   const { minPrice, maxPrice, setPrice, mainCategory, setMainCategory, subCategory, setSubCategory, filterCategoryCntxt, setFilterCategory, setFilterCategoryName, color, setColor, material, setMaterial, designer, setDesigner, plusSize, setPlusSize, occasion, setOccasion, size, setSize, celebrity, setCelebrity, discount, setDiscount, shippingTime, setShippingTime, resetFilter } = useFilter();
   const [selectedTheme, setSelectedTheme] = useState("");
   const [sbctgry, setSbctgry] = useState(null);
@@ -30,7 +30,10 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
   const currencySymbol = currencyData.symbol;
 
   // Converted display values
-  const minDisplay = Math.floor(minPrice / rate);
+  // const minDisplay = Math.floor(minPrice / rate);
+  const minDisplay = Math.floor(
+    (minPrice === 0 ? productMinPrice : minPrice) / rate
+  );
   const maxDisplay = Math.floor(maxPrice / rate);
 
   // console.log(filterCategories, 'filterCategories');
@@ -283,16 +286,16 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
                   <div className="range-input">
                     <input
                       type="range"
-                      min={0}
+                      min={productMinPrice}
                       max={maxRange}
-                      value={minPrice}
+                      value={minPrice === 0 ? productMinPrice : minPrice}
                       onChange={handleMinRange}
                       onMouseUp={() => applyPriceFilter(minPrice, maxPrice)}
                       onTouchEnd={() => applyPriceFilter(minPrice, maxPrice)}
                     />
                     <input
                       type="range"
-                      min={0}
+                      min={productMinPrice}
                       max={maxRange}
                       value={maxPrice}
                       onChange={handleMaxRange}
