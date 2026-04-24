@@ -873,17 +873,22 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
                           const urlSub = urlParts[1] || null;
 
                           const isAllProducts = currentPath.includes("all-products");
+                          const isnewIn = currentPath.includes("new-in");
+                          const isreadyToShip = currentPath.includes("ready-to-ship");
 
-                          const showMainCategory = isAllProducts || mainCategorySlug === urlMain;
+                          // const showMainCategory = isAllProducts || mainCategorySlug === urlMain;
+                          const showMainCategory = isAllProducts || isnewIn || isreadyToShip || mainCategorySlug === urlMain;
                           if (!showMainCategory) return null;
+
+                          console.log(showMainCategory, 'showMainCategory');
 
                           const isSubCategoryURL = !!urlSub;
 
                           // Auto-expand correct category
-                          const expandedCategoryId = isAllProducts
+                          const expandedCategoryId = isAllProducts || isnewIn || isreadyToShip
                             ? sbctgry
                             : filterCategories.find(fc => fc.mainCategory_slug.toLowerCase() === urlMain)?.id;
-
+             
                           return (
                             <div key={filterCategory.id} className="doewjkrnhweiurwer mb-2">
                               {filterCategory.sub_categories.length > 0 && (
@@ -1067,7 +1072,7 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
                           {(FilterMappingdata.filter_option || "").toLowerCase() === "color" ? (
                             FilterMappingdata.colors?.map((colorObj, index) => {
                               const colorValue = colorObj.color_name;
-                              const colorCode = colorObj.color_code;
+                              const colorCode = colorObj.color_code; 
 
                               return (
                                 <div className="doewjkrnhweiurwer clor-fltr-optn" key={index}>

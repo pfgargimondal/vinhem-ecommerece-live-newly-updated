@@ -699,7 +699,10 @@ export const Filter = () => {
 
                       } else if (item.type === "plusSize" || item.type === "size") {
                           // Convert all letters to uppercase
-                          displayValue = item.value.toUpperCase();
+                            displayValue = item.value === 'free size'
+                                ? toTitleCase(item.value)
+                                : item.value.toUpperCase();
+
                       } else if (item.type === "discount") {
                           // displayValue = item.value;
                           const [min, max] = item.value.split("-");
