@@ -878,7 +878,7 @@ export const Filter = () => {
                                       >
                                         <i
                                           className={
-                                            wishlistIds.includes(product.id)
+                                            wishlistIds.includes(product.PID)
                                               ? "fa-solid fa-heart"
                                               : "fa-regular fa-heart"
                                           }
@@ -964,7 +964,7 @@ export const Filter = () => {
                                         >
                                           <i
                                             className={
-                                              wishlistIds.includes(product.id)
+                                              wishlistIds.includes(product.PID)
                                                 ? "fa-solid fa-heart"
                                                 : "fa-regular fa-heart"
                                             }
