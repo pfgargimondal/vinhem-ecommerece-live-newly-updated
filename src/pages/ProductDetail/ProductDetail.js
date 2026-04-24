@@ -1817,7 +1817,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
 
                               <hr class="mt-0" style={{ width: "86%" }} />
 
-                              <div className="d-flex align-items-center justify-content-between sdfasdctgerrrrwe mb-2">
+                             <div className={`d-flex align-items-center ${(productDetails?.data?.stitching_option?.toLowerCase() === "ready to wear" && productDetails?.data?.custom_fit?.toLowerCase() === "yes") ? "" : "justify-content-between"} sdfasdctgerrrrwe mb-2`}>
                                 <div className="select-form-drpdwn weqwthyuytredfgw me-3">
                                   <div className="dgndfjgdf">
                                     <select
@@ -1895,7 +1895,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                
                                 {(productDetails?.data?.stitching_option?.toLowerCase() === "ready to wear")&&
                                 productDetails?.data?.custom_fit?.toLowerCase() === "yes" && (
-                                    <div className="saoijhdekjwirwer">
+                                    <div className="saoijhdekjwirwer col-lg-4 col-md-6 col-sm-6 col-6">
                                       <div className="dowekrwerwer">
                                         <input
                                           type="checkbox"
@@ -1923,9 +1923,23 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                         </label>
                                       </div>
                                     </div>
+                                )}                                
+                               
+                                {productDetails?.data?.designer_sizeChart?.length > 0 && (
+                                  <div className="select-form-side">
+                                    <div className="dokewhkjrhuiwerwer skdncfjsdbcfksdnf">
+                                      <button
+                                        className="btn btn-main px-0"
+                                        onClick={() => setShowSizeGuide(!showSizeGuide)}
+                                      >
+                                        <img src="/images/ruler.png" alt="" /> Size Guide
+                                      </button>
+                                    </div>
+                                  </div>
                                 )}
+                              </div>
 
-                                {selectedStitchOption === "customFit" &&
+                              {selectedStitchOption === "customFit" &&
                                 (productDetails?.data?.stitching_option?.toLowerCase() === "ready to wear")&&
                                   productDetails?.data?.custom_fit?.toLowerCase() === "yes" && (
                                   <div className="ikasdnjiknswjirhwer mb-4">
@@ -1968,20 +1982,6 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                     </p>
                                   </div>
                                 )}
-                               
-                                {productDetails?.data?.designer_sizeChart?.length > 0 && (
-                                  <div className="select-form-side">
-                                    <div className="dokewhkjrhuiwerwer skdncfjsdbcfksdnf">
-                                      <button
-                                        className="btn btn-main px-0"
-                                        onClick={() => setShowSizeGuide(!showSizeGuide)}
-                                      >
-                                        <img src="/images/ruler.png" alt="" /> Size Guide
-                                      </button>
-                                    </div>
-                                  </div>
-                                )}
-                              </div>
 
                               <div className="vfsdvg">
                                 {(() => {
