@@ -560,9 +560,16 @@ export const Filter = () => {
       .replace(/\b\w/g, (char) => char.toUpperCase());
   };
 
+  const isSpecialPage = 
+    category === "all-products" ||
+    category === "new-in" ||
+    category === "ready-to-ship";
+
   if (loading || wishlistLoading) {
     return <Loader />;
   }
+
+  
 
   return (
     <div className="filter-wrapper pt-2">
@@ -670,7 +677,11 @@ export const Filter = () => {
 
         <div className="row mt-5 dffedfgwetttt">
           <div className="col-lg-3">
-            <div className="filter-options" style={category && !subcategory && !category.includes("all-products") ? { transform: "translateY(-18vw)" } : {}}>
+            <div className="filter-options" style={
+              category && !subcategory && !isSpecialPage
+                ? { transform: "translateY(-18vw)" }
+                : {}
+            }>
               <div className="dweihrihwerwerwer pb-4">
                 <div className="doeihrmwerwer d-flex flex-wrap">
                   {filterOptionsItems.slice(0, selectedFilterOptions).map(item => {

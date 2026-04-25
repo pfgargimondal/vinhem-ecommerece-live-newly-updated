@@ -872,32 +872,24 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
                           const urlMain = urlParts[0];
                           const urlSub = urlParts[1] || null;
 
-                          const isGenericListing = 
-                            currentPath.includes("all-products") ||
-                            currentPath.includes("new-in") ||
-                            currentPath.includes("ready-to-ship");
+                          // console.log(currentPath, 'currentPath');
 
-                          const showMainCategory = isGenericListing || mainCategorySlug === urlMain;
+                          const isAllProducts = currentPath.includes("all-products");
+                          const isnewIn = currentPath.includes("new-in");
+                          const isreadyToShip = currentPath.includes("ready-to-ship");
 
-                          // const isAllProducts = currentPath.includes("all-products");
-                          // const isnewIn = currentPath.includes("new-in");
-                          // const isreadyToShip = currentPath.includes("ready-to-ship");
-
-                          // // const showMainCategory = isAllProducts || mainCategorySlug === urlMain;
-                          // const showMainCategory = isAllProducts || isnewIn || isreadyToShip || mainCategorySlug === urlMain;
+                          // const showMainCategory = isAllProducts || mainCategorySlug === urlMain;
+                          const showMainCategory = isAllProducts || isnewIn || isreadyToShip || mainCategorySlug === urlMain;
+                          // if (!showMainCategory) return null;
                           if (!showMainCategory) return null;
 
                           const isSubCategoryURL = !!urlSub;
 
                           // Auto-expand correct category
-                          // const expandedCategoryId = isAllProducts
-                          //   ? sbctgry
-                          //   : filterCategories.find(fc => fc.mainCategory_slug.toLowerCase() === urlMain)?.id;
-
-                          const expandedCategoryId = isGenericListing
+                          const expandedCategoryId = isAllProducts
                             ? sbctgry
                             : filterCategories.find(fc => fc.mainCategory_slug.toLowerCase() === urlMain)?.id;
-                                      
+             
                           return (
                             <div key={filterCategory.id} className="doewjkrnhweiurwer mb-2">
                               {filterCategory.sub_categories.length > 0 && (
@@ -907,8 +899,7 @@ export default function FilterSection({ setResFltrMenu, allFilterMappingdata, fi
                                       <div className="oijdmeiojewrer d-flex justify-content-between w-100 align-items-center">
 
                                         {/* HIDE MAIN CATEGORY LABEL & PLUS/MINUS WHEN URL HAS SUBCATEGORY */}
-                                        {/* {!isSubCategoryURL && mainCategorySlug !== currentPath && ( */}
-                                         {!isSubCategoryURL && (isGenericListing || mainCategorySlug !== currentPath) && (
+                                        {!isSubCategoryURL && mainCategorySlug !== currentPath && (
                                           <>
                                             <div className="doiwejirwer d-flex align-items-center">
                                               <div className="cdwehjirnweijrowejrowejr">
