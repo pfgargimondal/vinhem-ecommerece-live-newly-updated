@@ -1779,9 +1779,9 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                           {(productDetails?.data?.stitching_option ===
                             "Ready To Wear" || productDetails?.data?.stitching_option === "Ready to Wear") && (
                             <div className="jlksdeflksdfk">
-                              <div className="d-flex align-items-center justify-content-between mb-2">
+                              <div className="d-flex align-items-center justify-content-between mb-3">
                                 <label className="form-label asdadadwdwdadad mb-0">
-                                  <h4>Select Your Size</h4>
+                                  <h4 className="mb-0">Select Your Size</h4>
                                 </label>
 
                                 <div className="dfhdfhd pe-0">
@@ -2347,7 +2347,7 @@ for (let i = 0; i < filteredSpecs.length; i++) {
                                   className="btn btn-main px-3 me-4"
                                   onClick={handleLoginModal}
                                 >
-                                  <i class="bi bi-bag me-1"></i>Add to Cart
+                                  <i class="bi bi-bag me-2"></i>Add to Cart
                                 </button>
 
                                 <button

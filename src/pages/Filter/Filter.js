@@ -927,7 +927,7 @@ export const Filter = () => {
                               </div>
 
                               <div className={`fdbdfgdfgdf ${!viewType ? "col-lg-12 px-1" : "col-lg-9"}`}>
-                                <div className={`d-flex align-items-center ${(product.rts_quantity > '0' && (product?.best_seller === '1' || product?.best_seller === true) ? "justify-content-between" : "")}`}>
+                                <div className={`iakdpleejwrwerer d-flex align-items-center`}>
                                   <h6><i class="bi me-1 bi-truck"></i> Ships in {product.shipping_time}</h6>
 
                                   {/* {product.product_category === "READY TO SHIP" && (

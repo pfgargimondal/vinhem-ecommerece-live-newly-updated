@@ -12,6 +12,32 @@ export const MeasurementForm = ({
 
   const [selectedSize, setSelectedSize] = useState("");
 
+  const options = [
+    "Apple",
+    "Banana",
+    "Orange",
+    "Mango",
+    "Pineapple",
+    "Grapes",
+    "Strawberry",
+    "Watermelon"
+  ];
+
+  const [search, setSearch] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+    // eslint-disable-next-line
+  const [selected, setSelected] = useState("");
+
+  const filteredOptions = options.filter(option =>
+    option.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const handleSelect = (value) => {
+    setSelected(value);
+    setSearch(value);
+    setShowDropdown(false);
+  };
+
   // const handleSizeChange = (e) => {
   //   const newSize = e.target.value;
   //   setSelectedSize(newSize);
@@ -597,6 +623,34 @@ export const MeasurementForm = ({
 
                   <div className="dihwemoirjwerwer mb-5">
                     <h5 className="text-center mb-3">Select Measurement Fit</h5>
+
+                    <div className="searchable-dropdown fdghrgsdawed">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Search..."
+                        value={search}
+                        onChange={(e) => {
+                          setSearch(e.target.value);
+                          setShowDropdown(true);
+                        }}
+                        onFocus={() => setShowDropdown(true)}
+                      />
+
+                      {showDropdown && (
+                        <ul className="dropdown-list xdvdbdrsaegsf">
+                          {filteredOptions.length > 0 ? (
+                            filteredOptions.map((item, index) => (
+                              <li key={index} onClick={() => handleSelect(item)}>
+                                {item}
+                              </li>
+                            ))
+                          ) : (
+                            <li className="no-result">No result found</li>
+                          )}
+                        </ul>
+                      )}
+                    </div>
 
                     <div className="dowehrinwejikhriwer">
                       <div className="row align-items-center">

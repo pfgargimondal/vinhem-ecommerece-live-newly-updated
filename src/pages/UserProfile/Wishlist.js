@@ -97,31 +97,35 @@ export const Wishlist = () => {
                                                             <span className="price"><i>NEW IN</i></span>
                                                         </div>
                                                     )}
-                                                    {(wishlistProduct?.mto_quantity === "0" && wishlistProduct?.rts_quantity === "0") && (
-                                                        <div className={`${styles.nwArrvlgf} px-0`}>
-                                                            <span className="price"><i>Not Available</i></span>
-                                                        </div>
-                                                    )}
+                                                    
                                                     <div className={`${styles.image} position-relative`}>
                                                         <div className={`${styles.ddfhfgsedegjfree} position-absolute end-0`} onClick={() => handleRemoveItem(wishlistProduct.product_id)}>
                                                             <i class="bi me-2 bi-x-circle-fill"></i>
                                                         </div>
 
-                                                        <Link to={`/products/${wishlistProduct.slug}-${wishlistProduct.PID}`}>
+                                                        <Link to={`/products/${wishlistProduct.slug}-${wishlistProduct.PID}`} className="position-relative w-100 h-100 d-block overflow-hidden" style={{ borderRadius: "10px" }}>
                                                             <img src={wishlistProduct.encoded_image_url_1} alt="not found" />
+
+                                                            {(wishlistProduct?.mto_quantity === "0" && wishlistProduct?.rts_quantity === "0") && (
+                                                                <div className={`${styles.czdghdfhfrrrt} position-absolute px-0`}>
+                                                                    <span className="price"><i>Not Available</i></span>
+                                                                </div>
+                                                            )}
                                                         </Link>
 
                                                         <div className={`fdbdfgdfgdf`}>
-                                                            <h6><i class="bi me-1 bi-truck"></i> Ships in {wishlistProduct.shipping_time}</h6>
+                                                            <div className="iakdpleejwrwerer d-flex align-items-center">
+                                                                <h6><i class="bi me-1 bi-truck"></i> Ships in {wishlistProduct.shipping_time}</h6>
 
-                                                            {wishlistProduct?.rts_quantity > 0 && (
-                                                                <h6><i class="bi me-1 bi-rocket-takeoff"></i> Ready to ship</h6>
-                                                            )}  
-                                                            
+                                                                {wishlistProduct?.rts_quantity > 0 && (
+                                                                    <h6><i class="bi me-1 bi-rocket-takeoff"></i> Ready to ship</h6>
+                                                                )}  
+                                                                
 
-                                                            {(wishlistProduct?.best_seller === '1' || wishlistProduct?.best_seller === true) && (
-                                                                <h6><i class="bi bi-lightning-charge"></i> Best Seller</h6>
-                                                            )}                             
+                                                                {(wishlistProduct?.best_seller === '1' || wishlistProduct?.best_seller === true) && (
+                                                                    <h6><i class="bi bi-lightning-charge"></i> Best Seller</h6>
+                                                                )}   
+                                                            </div>                          
 
                                                             <h4>{wishlistProduct.product_name}</h4>
 
