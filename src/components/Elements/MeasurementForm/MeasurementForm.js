@@ -24,14 +24,15 @@ export const MeasurementForm = ({
   ];
 
   const [search, setSearch] = useState("");
+     // eslint-disable-next-line
   const [showDropdown, setShowDropdown] = useState(false);
     // eslint-disable-next-line
   const [selected, setSelected] = useState("");
-
+   // eslint-disable-next-line
   const filteredOptions = options.filter(option =>
     option.toLowerCase().includes(search.toLowerCase())
   );
-
+   // eslint-disable-next-line
   const handleSelect = (value) => {
     setSelected(value);
     setSearch(value);
@@ -624,7 +625,7 @@ export const MeasurementForm = ({
                   <div className="dihwemoirjwerwer mb-5">
                     <h5 className="text-center mb-3">Select Measurement Fit</h5>
 
-                    <div className="searchable-dropdown fdghrgsdawed">
+                    {/* <div className="searchable-dropdown fdghrgsdawed">
                       <input
                         type="text"
                         className="form-control"
@@ -650,7 +651,7 @@ export const MeasurementForm = ({
                           )}
                         </ul>
                       )}
-                    </div>
+                    </div> */}
 
                     <div className="dowehrinwejikhriwer">
                       <div className="row align-items-center">
